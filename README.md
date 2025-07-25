@@ -14,35 +14,26 @@ Features
 |Dynamic Configuration: Remote updates of mining pool and settings|
 |Heartbeat Monitoring: Regular status reports to C2 server|
 |Resource Optimization: Adjusts mining intensity based on system specs|
-||
 
-Components
-Bot Client (this repository)
+graph TD
+```
+    BotClient[Bot Client (this repository)]
+    C2Server[C2 Server (separate repository)]
+    XMRig[XMRig Miner]
 
-Connects to C2 server
+    BotClient -->|Connects to| C2Server
+    BotClient -->|Downloads and runs| XMRig
+    BotClient -->|Reports mining statistics| C2Server
+    BotClient -->|Implements persistence| BotClient
 
-Downloads and runs miner
+    C2Server -->|Manages all connected bots| BotClient
+    C2Server -->|Sends mining commands| XMRig
+    C2Server -->|Collects statistics| BotClient
+    C2Server -->|Updates mining configuration| XMRig
 
-Reports mining statistics
-
-Implements persistence
-
-C2 Server (separate repository)
-
-Manages all connected bots
-
-Sends mining commands
-
-Collects statistics
-
-Updates mining configuration
-
-XMRig Miner
-
-Official XMRig miner (downloaded automatically)
-
-Configured for Monero mining
-
+    XMRig -->|Official XMRig miner| XMRig
+    XMRig -->|Configured for Monero mining| XMRig
+```
 Installation
 For Research/Testing Purposes
 Clone the repository:
