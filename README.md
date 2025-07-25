@@ -16,6 +16,7 @@ Features
 |Resource Optimization: Adjusts mining intensity based on system specs|
 
 ```mermaid
+graph TD
     BotClient[Bot Client (this repository)]
     C2Server[C2 Server (separate repository)]
     XMRig[XMRig Miner]
@@ -31,7 +32,8 @@ Features
     C2Server -->|Updates mining configuration| XMRig
 
     XMRig -->|Official XMRig miner| XMRig
-    XMRig -->|Configured for Monero mining| XMRig
+    XMRig --
+
 ```
 
 Installation
