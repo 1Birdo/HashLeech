@@ -14,7 +14,7 @@ Features
 |Dynamic Configuration: Remote updates of mining pool and settings|
 |Heartbeat Monitoring: Regular status reports to C2 server|
 |Resource Optimization: Adjusts mining intensity based on system specs|
-|---------------------------------------------------------------------------|
+||
 
 Components
 Bot Client (this repository)
