@@ -6,20 +6,13 @@ HashLeech is a cryptocurrency mining botnet implementation that demonstrates how
 
 Features
 |---------------------------------------------------------------------------|
-Automatic Miner Deployment: Downloads and installs XMRig miner automatically
-|---------------------------------------------------------------------------|
+|Automatic Miner Deployment: Downloads and installs XMRig miner automatically|
 |Command & Control (C2) Server: Centralized control of all mining nodes|
-|---------------------------------------------------------------------------|
 |Stealth Operation: Runs with minimal resource usage detection|
-|---------------------------------------------------------------------------|
 |Cross-Platform: Supports both Windows and Linux systems|
-|---------------------------------------------------------------------------|
 |Persistence Mechanisms: Automatically reinstalls after reboots|
-|---------------------------------------------------------------------------|
 |Dynamic Configuration: Remote updates of mining pool and settings|
-|---------------------------------------------------------------------------|
 |Heartbeat Monitoring: Regular status reports to C2 server|
-|---------------------------------------------------------------------------|
 |Resource Optimization: Adjusts mining intensity based on system specs|
 |---------------------------------------------------------------------------|
 
