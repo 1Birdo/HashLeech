@@ -32,7 +32,7 @@ graph TD
     C2Server -->|Updates mining configuration| XMRig
 
     XMRig -->|Official XMRig miner| XMRig
-    XMRig --
+    XMRig -->|Configured for Monero mining| XMRig
 
 ```
 
