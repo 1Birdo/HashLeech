@@ -15,7 +15,7 @@ Features
 |Heartbeat Monitoring: Regular status reports to C2 server|
 |Resource Optimization: Adjusts mining intensity based on system specs|
 
-```graph mermaid
+```mermaid
     BotClient[Bot Client (this repository)]
     C2Server[C2 Server (separate repository)]
     XMRig[XMRig Miner]
