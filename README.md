@@ -17,8 +17,8 @@ Features
 
 ```mermaid
 graph TD
-    BotClient[Bot Client (this repository)]
-    C2Server[C2 Server (separate repository)]
+    BotClient[Bot Client - this repository]
+    C2Server[C2 Server - separate repository]
     XMRig[XMRig Miner]
 
     BotClient -->|Connects to| C2Server
