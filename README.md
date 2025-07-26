@@ -58,17 +58,18 @@ Run the bot:
 ```bash
 ./HashLeech
 ```
-Command Reference
-|------------|------------|----------------|
-||
-|Command	|Description	|Example|
-|START	|Start mining operation	|START|
-|STOP	|Stop mining operation	|STOP|
-|UPDATE	|Update miner binary	|UPDATE|
-|KILL	|Remove miner and bot	|KILL|
-|PERSIST|	Install| persistence |mechanism	|PERSIST|
+## Command Reference
 
-Configuration
+| Command  | Description                          | Example |
+|----------|--------------------------------------|---------|
+| START    | Start mining operation               | START   |
+| STOP     | Stop mining operation                | STOP    |
+| UPDATE   | Update miner binary to latest version | UPDATE  |
+| KILL     | Remove miner and bot from system      | KILL    |
+| PERSIST  | Install persistence mechanism         | PERSIST |
+| CUSTOM   | Execute custom shell command         | CUSTOM "ls -la" |
+
+## Configuration
 Edit the following constants in bot.go before building:
 ```go
 const (
