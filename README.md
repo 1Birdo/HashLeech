@@ -1,7 +1,6 @@
-# HashLeech Enhanced - Military-Grade Security Implementation
+# HashLeech - Security Implementation
 
 [![Go Version](https://img.shields.io/badge/Go-1.21+-blue.svg)](https://golang.org)
-[![Security](https://img.shields.io/badge/Security-Military--Grade-red.svg)]()
 [![License](https://img.shields.io/badge/License-Educational-yellow.svg)]()
 [![FIPS](https://img.shields.io/badge/FIPS%20140--2-In%20Progress-orange.svg)]()
 
