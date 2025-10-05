@@ -1,4 +1,4 @@
-# HashLeech Military-Grade Command & Control Framework
+# HashLeech Command & Control Framework For Mining
 
 **Classification**: UNCLASSIFIED//FOR OFFICIAL USE ONLY  
 **Purpose**: Secure Command & Control System for Military Operations  
