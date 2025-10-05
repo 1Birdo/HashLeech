@@ -1,14 +1,34 @@
-# HashLeech Command & Control Framework For Mining
+# HashLeech Enhanced - Military-Grade Security Implementation
 
-**Classification**: UNCLASSIFIED//FOR OFFICIAL USE ONLY  
-**Purpose**: Secure Command & Control System for Military Operations  
-**Security Level**: MILITARY-GRADE ENCRYPTION & AUTHENTICATION
+[![Go Version](https://img.shields.io/badge/Go-1.21+-blue.svg)](https://golang.org)
+[![Security](https://img.shields.io/badge/Security-Military--Grade-red.svg)]()
+[![License](https://img.shields.io/badge/License-Educational-yellow.svg)]()
+[![FIPS](https://img.shields.io/badge/FIPS%20140--2-In%20Progress-orange.svg)]()
 
-## 🛡️ OVERVIEW
+## 🔍 PROJECT ORIGIN & PURPOSE
 
-HashLeech is a military-grade command and control (C2) framework designed for secure distributed operations. It implements comprehensive security controls including mutual TLS authentication, quantum-resistant cryptography, and DoD-compliant audit logging.
+This repository contains **enhanced security implementations** of an originally leaked HashLeech source code. The original codebase has been completely rewritten with **Better security + Control** for educational and research purposes.
 
-**⚠️ DISCLAIMER**: This system requires proper authorization and security clearance for military deployment. Current implementation is for development and testing only until formal FIPS 140-2 certification is obtained.
+**📚 EDUCATIONAL DISCLAIMER**: This project demonstrates advanced cybersecurity concepts including:
+- Military-grade cryptographic implementations
+- Secure command & control architectures  
+- Defense-in-depth security strategies
+- Supply chain security verification
+- Formal security accreditation processes
+
+## 🛡️ SECURITY TRANSFORMATION
+
+### **Original vs Enhanced**
+| Aspect | Original Leaked Code | This Enhanced Version |
+|--------|---------------------|----------------------|
+| **Encryption** | Basic/None | ChaCha20-Poly1305 (Quantum-resistant) |
+| **Authentication** | Weak/None | Mutual TLS + Certificate Pinning |
+| **Key Management** | Hardcoded | HSM Integration + Auto-rotation |
+| **Audit Logging** | None | Military-grade SIEM integration |
+| **Memory Security** | None | DoD 5220.22-M compliant scrubbing |
+| **Network Security** | Plaintext | TLS 1.3 + Traffic obfuscation |
+
+**⚠️ LEGAL NOTICE**: This enhanced implementation is for **educational and research purposes only**. The original leaked source has been completely rewritten to demonstrate proper security implementations. Use only in authorized test environments.
 
 ## 🎖️ MILITARY-GRADE SECURITY FEATURES
 
@@ -75,44 +95,37 @@ graph TB
     SIPR -.->|Secure Network| C2
 ```
 
-## 🚀 QUICK START
+## 🚀 GETTING STARTED
 
-### Prerequisites
-- **Go 1.21+** with CGO support
-- **OpenSSL/BoringSSL** for FIPS crypto (production)
-- **Hardware Security Module** (recommended)
-- **Military PKI Certificates** (for production deployment)
+### **⚠️ Prerequisites & Legal Requirements**
+- **Educational/Research Use Only** - Not for unauthorized deployment
+- **Go 1.21+** with CGO support for cryptographic modules
+- **Isolated Test Environment** - No production network access
+- **Security Clearance** (if adapting for actual military use)
 
-### 1. **Security Configuration**
+### **📥 Installation**
 ```bash
-# Copy security template
-cp security-config.template.env production.env
 
-# Configure mandatory security variables
-export SERVER_CERT_PIN="sha256_hash_of_your_certificate"
-export XMRIG_DOWNLOAD_URL="https://secure.internal.server/xmrig.zip" 
-export MINER_CONFIG_URL="https://secure.internal.server/config.json"
-export C2_SERVER_NAME="secure-command.local"
-export C2_ADDRESS="10.0.0.1:7003"
+# Verify you have required dependencies
+go version  # Should be 1.21+
 ```
 
-### 2. **Build & Deploy**
+### **🔧 Quick Setup for Research/Testing**
 ```bash
-# Military-grade build
+# 1. Configure security environment (required)
+cp security-config.template.env .env
+nano .env  # Edit with your test environment settings
+
+# 2. Build the enhanced version
 ./build-secure.sh
 
-# Deploy with security validation
-./deploy-military.bat    # Windows
-./deploy-military.sh     # Linux
-```
-
-### 3. **Generate PKI Certificates**
-```bash
-# Generate CA, server, and client certificates
+# 3. Generate test certificates (for lab environment only)
 ./HashLeech-server.exe -generate-certs
 
-# Verify certificate chain
-openssl verify -CAfile ca.crt server.crt client.crt
+# 4. Run in isolated test mode
+export DEPLOYMENT_ENV="research"
+export NETWORK_ISOLATION="true"
+./HashLeech-server.exe --test-mode
 ```
 
 ## 📋 SECURITY COMMANDS
@@ -184,32 +197,30 @@ export ENABLE_TRAFFIC_MIXING="true"        # Traffic obfuscation
 }
 ```
 
-## 🎯 OPERATIONAL MODES
+## 🎯 RESEARCH & EDUCATIONAL USE CASES
 
-### **Development Mode**
-```bash
-# Basic security for development/testing
-export DEPLOYMENT_ENV="development"
-export FIPS_MODE="false"  
-./HashLeech-server.exe
-```
+### **Cybersecurity Education**
+- **Cryptographic Implementation**: Study quantum-resistant encryption
+- **Network Security**: Analyze TLS 1.3 and certificate pinning
+- **Secure Architecture**: Learn defense-in-depth strategies
+- **Compliance Frameworks**: Understand FIPS, NIST, and DoD standards
 
-### **Military Production**
-```bash
-# Full military-grade security
-export DEPLOYMENT_ENV="production"
-export FIPS_MODE="true"
-export NETWORK_CLASSIFICATION="SECRET"
-./HashLeech-server.exe --military-mode
-```
+### **Security Research**
+- **Vulnerability Analysis**: Test security controls implementation
+- **Red Team Exercises**: Study C2 communication patterns (in isolated labs)
+- **Blue Team Training**: Practice detection and mitigation techniques
+- **Academic Research**: Formal verification of security properties
 
-### **Covert Operations**
+### **Development Learning**
 ```bash
-# Maximum stealth configuration
-export ENABLE_TOR="true"
-export ENABLE_TRAFFIC_MIXING="true"
-export FINGERPRINT_JITTER_MAX="15000"
-./HashLeech-server.exe --covert-mode
+# Study the security implementations
+grep -r "ChaCha20" . --include="*.go"  # Quantum-resistant encryption
+grep -r "BLAKE2b" . --include="*.go"   # Military-grade HMAC
+grep -r "TLS" . --include="*.go"       # Transport security
+
+# Analyze the security architecture
+tree docs/                             # Review all documentation
+cat MILITARY_COMPLIANCE_ASSESSMENT.md  # Understand compliance gaps
 ```
 
 ## 📊 MONITORING & AUDIT
@@ -260,49 +271,67 @@ export QRADAR_SYSLOG="qradar.mil:514"
 - 🎖️ [**Military Security Details**](MILITARY_SECURITY.md) - Military-specific controls
 - 🔐 [**Security Patch Summary**](SECURITY_PATCH_SUMMARY.md) - Recent enhancements
 
-## ⚠️ DEPLOYMENT WARNINGS
+## ⚠️ IMPORTANT DISCLAIMERS & WARNINGS
 
-### **🔴 NOT APPROVED FOR MILITARY USE**
-Current system requires formal certification:
-- **FIPS 140-2 validation** (6-12 months)
-- **Authority to Operate (ATO)** (12-18 months) 
-- **Supply chain verification** (1-2 months)
-- **DoD PKI integration** (3-6 months)
+### **🔴 EDUCATIONAL USE ONLY**
+This enhanced implementation is strictly for:
+- **Academic research and education**
+- **Cybersecurity training and learning**
+- **Isolated laboratory testing**
+- **Security concept demonstration**
 
-### **🟡 DEVELOPMENT/TESTING ONLY**
-Until formal certification is complete:
-- Use only in isolated test environments
-- No classified data processing
-- No production military networks
-- Requires security officer approval
+### **🚫 PROHIBITED USES**
+- **No unauthorized network deployment**
+- **No use on systems you don't own**
+- **No use for actual malicious purposes**
+- **No deployment without proper authorization**
 
-## 🤝 CONTRIBUTION & SUPPORT
+### **� Original Source Transformation**
+- Original leaked code has been **completely rewritten**
+- Added **military-grade security implementations**
+- Focused on **educational value and security research**
+- **Not suitable for production use** without proper certification
 
-### **Security Issues**
-Report security vulnerabilities through secure channels:
-- **Classified**: [SIPR email]
-- **Unclassified**: Create GitHub issue with `[SECURITY]` tag
+### **🎓 Learning Objectives**
+This repository demonstrates:
+- How to properly implement secure C2 architectures
+- Military-grade cryptographic standards (ChaCha20, BLAKE2b)
+- Certificate-based authentication and PKI management
+- Compliance with cybersecurity frameworks (NIST, FIPS, DoD)
+- Supply chain security and formal verification processes
 
-### **Development Guidelines**
+## 🤝 CONTRIBUTING & COMMUNITY
+
+### **🔬 Research Contributions Welcome**
+We welcome contributions that enhance the educational value:
+- **Security improvements** and vulnerability fixes
+- **Documentation enhancements** for better learning
+- **Additional compliance framework** implementations
+- **Code analysis and security reviews**
+
+### **📝 How to Contribute**
 ```bash
-# Security-first development
-go vet ./...
-gosec ./...
-govulncheck ./...
+# Fork the repository on GitHub
+git clone https://github.com/yourusername/HashLeech-Enhanced.git
 
-# Build with security flags
-CGO_ENABLED=1 go build -trimpath -ldflags="-s -w"
+# Create a feature branch for your educational enhancement
+git checkout -b feature/security-improvement
+
+# Make your changes (security-focused improvements only)
+# Test thoroughly in isolated environment
+go test ./...
+./scripts/security-test.sh
+
+# Submit a pull request with detailed explanation
 ```
 
-## 📄 LICENSE & CLASSIFICATION
+### **🐛 Security Issues & Responsible Disclosure**
+- **Educational discoveries**: Open GitHub issues for learning discussion
+- **Security vulnerabilities**: Use responsible disclosure practices
+- **Research findings**: Share through academic channels
 
-**License**: [Appropriate Military/Government License]  
-**Classification**: UNCLASSIFIED//FOR OFFICIAL USE ONLY  
-**Distribution**: AUTHORIZED PERSONNEL ONLY  
-**Export Control**: Subject to ITAR/EAR restrictions
-
----
-
-**⚡ HashLeech Military Framework - Secure by Design, Ready for Mission**
-
-*For technical support contact your designated system security officer*
+### **💬 Community Guidelines**
+- **Respect ethical boundaries** - educational use only
+- **Share knowledge responsibly** - help others learn
+- **Focus on defense** - improve security, don't enable attacks
+- **Cite sources properly** - acknowledge original research
