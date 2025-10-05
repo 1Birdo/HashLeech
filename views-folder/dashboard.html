@@ -3,70 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miner Control Panel</title>
+    <title>Miner Control Panel - HashLeech</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        cyber: {
-                            dark: '#0a0a12',
-                            primary: '#00f0ff',
-                            secondary: '#7b2dff',
-                            accent: '#ff2d75',
-                            panel: '#131320',
-                            border: '#252538',
-                            text: '#e0e0ff',
-                            dim: '#a0a0c0'
-                        }
-                    },
-                    fontFamily: {
-                        'mono': ['"Fira Code"', 'monospace'],
-                        'sans': ['"Rajdhani"', 'sans-serif']
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'flicker': 'flicker 0.5s infinite alternate'
-                    },
-                    keyframes: {
-                        glow: {
-                            '0%': { 'text-shadow': '0 0 5px rgba(0, 240, 255, 0.5)' },
-                            '100%': { 'text-shadow': '0 0 20px rgba(0, 240, 255, 0.9)' }
-                        },
-                        flicker: {
-                            '0%': { opacity: '0.7' },
-                            '100%': { opacity: '1' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #0a0a12;
+        @keyframes float {
+            0% { transform: translateY(0px) translateZ(0); }
+            50% { transform: translateY(-20px) translateZ(0); }
+            100% { transform: translateY(0px) translateZ(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes twinkle {
+            0% { transform: rotate(0deg) translateZ(0); }
+            100% { transform: rotate(360deg) translateZ(0); }
+        }
+
+        @keyframes cyberPulse {
+            0% { transform: scale(1); opacity: 0.2; }
+            100% { transform: scale(1.2); opacity: 0.5; }
+        }
+
+        @keyframes rotateBadge {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .galaxy-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(ellipse at bottom, #1a0f0a 0%, #0a0504 100%);
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="0.5" fill="white" opacity="0.8"/></svg>') repeat;
+            animation: twinkle 200s linear infinite;
+        }
+
+        .stars:nth-child(2) {
+            transform: scale(1.5);
+            animation: twinkle 150s linear infinite;
+            opacity: 0.6;
+        }
+
+        .stars:nth-child(3) {
+            transform: scale(2);
+            animation: twinkle 100s linear infinite;
+            opacity: 0.4;
+        }
+
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(255, 140, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 140, 0, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.5;
+        }
+
+        .cyber-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 140, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 69, 0, 0.15) 0%, transparent 40%);
+            animation: pulse 15s ease infinite alternate;
+        }
+
+        .cyber-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
+            animation: cyberPulse 8s infinite alternate;
+        }
+
+        .circuit-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: 
-                radial-gradient(circle at 25% 25%, rgba(123, 45, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
-            color: #e0e0ff;
+                linear-gradient(to right, rgba(255, 140, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 140, 0, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 140, 0, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+            filter: blur(1px);
+        }
+
+        .optimized-blur {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        body {
+            background-color: #1a0f0a;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 69, 0, 0.1) 0%, transparent 50%);
+            color: #ffe0d0;
             font-family: 'Rajdhani', sans-serif;
         }
 
         .cyber-btn {
-            background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(123, 45, 255, 0.2));
-            border: 1px solid rgba(0, 240, 255, 0.3);
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 69, 0, 0.2));
+            border: 1px solid rgba(255, 140, 0, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
         .cyber-btn:hover {
-            background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(123, 45, 255, 0.3));
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(255, 69, 0, 0.3));
+            box-shadow: 0 0 15px rgba(255, 140, 0, 0.4);
             transform: translateY(-2px);
         }
 
@@ -77,7 +177,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.4), transparent);
             transition: all 0.5s ease;
         }
 
@@ -86,8 +186,8 @@
         }
 
         .cyber-panel {
-            background-color: #131320;
-            border: 1px solid #252538;
+            background-color: #2a1810;
+            border: 1px solid #3a2820;
             border-radius: 4px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             position: relative;
@@ -101,41 +201,41 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, #00f0ff, #7b2dff);
+            background: linear-gradient(90deg, #ff8c00, #ff4500);
         }
 
         .cyber-title {
-            color: #00f0ff;
-            text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+            color: #ff8c00;
+            text-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
             letter-spacing: 1px;
             font-weight: 600;
         }
 
         .cyber-input {
-            background-color: #131320;
-            border: 1px solid #252538;
-            color: #e0e0ff;
+            background-color: #2a1810;
+            border: 1px solid #3a2820;
+            color: #ffe0d0;
             font-family: 'Fira Code', monospace;
             transition: all 0.3s ease;
         }
 
         .cyber-input:focus {
-            border-color: #00f0ff;
-            box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.3);
+            border-color: #ff8c00;
+            box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.3);
             outline: none;
         }
 
         .cyber-select {
-            background-color: #131320;
-            border: 1px solid #252538;
-            color: #e0e0ff;
+            background-color: #2a1810;
+            border: 1px solid #3a2820;
+            color: #ffe0d0;
             font-family: 'Fira Code', monospace;
             transition: all 0.3s ease;
         }
 
         .cyber-select:focus {
-            border-color: #00f0ff;
-            box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.3);
+            border-color: #ff8c00;
+            box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.3);
             outline: none;
         }
 
@@ -145,9 +245,9 @@
         }
 
         .cyber-table th {
-            background-color: #131320;
-            border-bottom: 1px solid #252538;
-            color: #00f0ff;
+            background-color: #2a1810;
+            border-bottom: 1px solid #3a2820;
+            color: #ff8c00;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -155,13 +255,13 @@
         }
 
         .cyber-table td {
-            border-bottom: 1px solid #252538;
+            border-bottom: 1px solid #3a2820;
             font-family: 'Fira Code', monospace;
             font-size: 0.9rem;
         }
 
         .cyber-table tr:hover td {
-            background-color: rgba(0, 240, 255, 0.05);
+            background-color: rgba(255, 140, 0, 0.05);
         }
 
         .custom-scrollbar::-webkit-scrollbar {
@@ -170,17 +270,17 @@
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: #131320;
+            background: #2a1810;
             border-radius: 3px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #00f0ff;
+            background: #ff8c00;
             border-radius: 3px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #7b2dff;
+            background: #ff4500;
         }
 
         .status-indicator {
@@ -191,8 +291,8 @@
         }
 
         .status-active {
-            background-color: #00ff88;
-            box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.3);
+            background-color: #ff8c00;
+            box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.3);
         }
 
         .status-inactive {
@@ -234,15 +334,15 @@
         }
 
         .cyber-badge-owner {
-            background-color: rgba(123, 45, 255, 0.2);
-            border: 1px solid rgba(123, 45, 255, 0.5);
-            color: #7b2dff;
+            background-color: rgba(255, 69, 0, 0.2);
+            border: 1px solid rgba(255, 69, 0, 0.5);
+            color: #ff4500;
         }
 
         .cyber-badge-admin {
-            background-color: rgba(0, 240, 255, 0.2);
-            border: 1px solid rgba(0, 240, 255, 0.5);
-            color: #00f0ff;
+            background-color: rgba(255, 140, 0, 0.2);
+            border: 1px solid rgba(255, 140, 0, 0.5);
+            color: #ff8c00;
         }
 
         .cyber-badge-user {
@@ -258,9 +358,9 @@
         }
 
         .cyber-badge-stealth {
-            background-color: rgba(0, 255, 136, 0.2);
-            border: 1px solid rgba(0, 255, 136, 0.5);
-            color: #00ff88;
+            background-color: rgba(255, 165, 0, 0.2);
+            border: 1px solid rgba(255, 165, 0, 0.5);
+            color: #ffa500;
         }
 
         .cyber-badge-maintenance {
@@ -275,17 +375,17 @@
             cursor: pointer;
         }
         .bot-row:hover {
-            border-color: rgba(0, 240, 255, 0.3);
+            border-color: rgba(255, 140, 0, 0.3);
         }
         .bot-row.border-cyber-primary {
-            border-color: #00f0ff;
+            border-color: #ff8c00;
         }
 
         .cyber-metric {
             font-family: 'Fira Code', monospace;
             font-size: 2.5rem;
             font-weight: 500;
-            background: linear-gradient(to right, #00f0ff, #7b2dff);
+            background: linear-gradient(to right, #ff8c00, #ff4500);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -300,19 +400,19 @@
 
         .cyber-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, #252538, transparent);
+            background: linear-gradient(90deg, transparent, #3a2820, transparent);
         }
 
         .cyber-flash {
-            background-color: rgba(0, 240, 255, 0.1);
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            color: #00f0ff;
+            background-color: rgba(255, 140, 0, 0.1);
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            color: #ff8c00;
             font-family: 'Fira Code', monospace;
             animation: flicker 0.5s infinite alternate;
         }
 
         .cyber-flash-btn {
-            color: #00f0ff;
+            color: #ff8c00;
             transition: all 0.3s ease;
         }
 
@@ -321,8 +421,8 @@
         }
 
         .cyber-dropdown {
-            background-color: #131320;
-            border: 1px solid #252538;
+            background-color: #2a1810;
+            border: 1px solid #3a2820;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
@@ -331,20 +431,20 @@
         }
 
         .cyber-dropdown-item:hover {
-            background-color: rgba(0, 240, 255, 0.1);
-            color: #00f0ff;
+            background-color: rgba(255, 140, 0, 0.1);
+            color: #ff8c00;
         }
 
         .cyber-progress {
             height: 4px;
-            background-color: #131320;
+            background-color: #2a1810;
             border-radius: 2px;
             overflow: hidden;
         }
 
         .cyber-progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, #00f0ff, #7b2dff);
+            background: linear-gradient(90deg, #ff8c00, #ff4500);
             transition: width 0.5s ease;
         }
 
@@ -355,8 +455,8 @@
         }
 
         .mining-stat-card {
-            background-color: #131320;
-            border: 1px solid #252538;
+            background-color: #2a1810;
+            border: 1px solid #3a2820;
             border-radius: 4px;
             padding: 1rem;
         }
@@ -364,7 +464,7 @@
         .hashrate-display {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #00f0ff;
+            color: #ff8c00;
             font-family: 'Fira Code', monospace;
         }
 
@@ -386,8 +486,8 @@
         }
 
         .modal {
-            background-color: #131320;
-            border: 1px solid #252538;
+            background-color: #2a1810;
+            border: 1px solid #3a2820;
             border-radius: 4px;
             width: 80%;
             max-width: 800px;
@@ -399,7 +499,7 @@
             padding: 12px 16px;
             background: transparent;
             border: none;
-            color: #a0a0c0;
+            color: #a08060;
             font-family: 'Rajdhani', sans-serif;
             font-weight: 600;
             cursor: pointer;
@@ -408,9 +508,9 @@
         }
 
         .tab-button.active {
-            color: #00f0ff;
-            border-bottom-color: #00f0ff;
-            background-color: rgba(0, 240, 255, 0.05);
+            color: #ff8c00;
+            border-bottom-color: #ff8c00;
+            background-color: rgba(255, 140, 0, 0.05);
         }
 
         .tab-content {
@@ -422,8 +522,8 @@
         }
 
         .command-card {
-            background-color: #131320;
-            border: 1px solid #252538;
+            background-color: #2a1810;
+            border: 1px solid #3a2820;
         }
     </style>
 </head>

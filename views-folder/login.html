@@ -53,7 +53,7 @@
             width: 100%;
             height: 100%;
             z-index: -2;
-            background: radial-gradient(ellipse at bottom, #0a0a12 0%, #000000 100%);
+            background: radial-gradient(ellipse at bottom, #1a0f0a 0%, #0a0504 100%);
             overflow: hidden;
         }
 
@@ -86,8 +86,8 @@
             width: 100%;
             height: 100%;
             background: 
-                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 140, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 140, 0, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
             opacity: 0.5;
         }
@@ -97,8 +97,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(123, 45, 255, 0.15) 0%, transparent 40%);
+                radial-gradient(circle at 20% 30%, rgba(255, 140, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 69, 0, 0.15) 0%, transparent 40%);
             animation: pulse 15s ease infinite alternate;
         }
 
@@ -106,7 +106,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
             animation: cyberPulse 8s infinite alternate;
         }
 
@@ -117,8 +117,8 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(to right, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+                linear-gradient(to right, rgba(255, 140, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 140, 0, 0.1) 1px, transparent 1px);
             background-size: 30px 30px;
             mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
             -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
@@ -136,14 +136,14 @@
         
         .particle {
             position: absolute;
-            background: rgba(0, 240, 255, 0.5);
+            background: rgba(255, 140, 0, 0.5);
             border-radius: 50%;
             animation: float 15s infinite ease-in-out;
             filter: blur(1px);
         }
 
         .input-focus-effect:focus-within {
-            box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.5);
+            box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.5);
             transition: box-shadow 0.2s ease;
         }
 
@@ -166,7 +166,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #00f0ff, #7b2dff);
+            background: linear-gradient(90deg, #ff8c00, #ff4500);
             transition: width 0.3s ease;
         }
 
@@ -178,7 +178,7 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
-            background: linear-gradient(135deg, #00f0ff, #7b2dff);
+            background: linear-gradient(135deg, #ff8c00, #ff4500);
             background-size: 200% 200%;
             animation: gradientFlow 5s ease infinite;
         }
@@ -190,7 +190,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent 35%, rgba(0, 240, 255, 0.3) 50%, transparent 65%);
+            background: linear-gradient(45deg, transparent 35%, rgba(255, 140, 0, 0.3) 50%, transparent 65%);
             transform: translateX(-100%) rotate(45deg);
             transition: transform 0.6s ease;
             z-index: -1;
@@ -208,9 +208,9 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: linear-gradient(145deg, rgba(0, 240, 255, 0.2), rgba(123, 45, 255, 0.1));
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-            border: 2px solid rgba(0, 240, 255, 0.3);
+            background: linear-gradient(145deg, rgba(255, 140, 0, 0.2), rgba(255, 69, 0, 0.1));
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+            border: 2px solid rgba(255, 140, 0, 0.3);
             animation: float 6s ease-in-out infinite;
         }
 
@@ -220,7 +220,7 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 2px dashed rgba(0, 240, 255, 0.4);
+            border: 2px dashed rgba(255, 140, 0, 0.4);
             animation: rotateBadge 20s linear infinite;
         }
 
@@ -231,8 +231,8 @@
 
         .login-card {
             transform: translateZ(0);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
-            border: 1px solid rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 30px rgba(255, 140, 0, 0.2);
+            border: 1px solid rgba(255, 140, 0, 0.2);
         }
 
         .animate-fade-in {
@@ -269,21 +269,21 @@
     <div class="particles" id="particles"></div>
     
     <div class="w-full max-w-md bg-gray-800/90 optimized-blur rounded-xl shadow-2xl overflow-hidden animate-fade-in login-card">
-        <div class="bg-gradient-to-r from-cyan-900/80 to-blue-900/80 p-8 text-center relative overflow-hidden">
+        <div class="bg-gradient-to-r from-orange-900/80 to-red-900/80 p-8 text-center relative overflow-hidden">
             <div class="absolute inset-0 overflow-hidden">
-                <div class="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-cyan-500/10 filter blur-3xl"></div>
-                <div class="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-purple-500/10 filter blur-3xl"></div>
-                <div class="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-blue-500/5 filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-orange-500/10 filter blur-3xl"></div>
+                <div class="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-red-500/10 filter blur-3xl"></div>
+                <div class="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-orange-500/5 filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
             </div>
             
             <div class="relative z-10 flex flex-col items-center justify-center gap-3">
                 <div class="security-badge mb-6">
-                    <i class="fas fa-shield-alt text-3xl text-cyan-300 animate-pulse"></i>
+                    <i class="fas fa-shield-alt text-3xl text-orange-300 animate-pulse"></i>
                 </div>
                 <h1 class="text-3xl font-bold text-white tracking-tight">MINER CONTROL PANEL</h1>
-                <p class="text-sm text-cyan-200 mt-1 font-mono tracking-wider">SECURE ACCESS REQUIRED</p>
+                <p class="text-sm text-orange-200 mt-1 font-mono tracking-wider">SECURE ACCESS REQUIRED</p>
                 
-                <div class="w-full max-w-xs h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent my-4"></div>
+                <div class="w-full max-w-xs h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent my-4"></div>
             </div>
         </div>
         
@@ -362,7 +362,7 @@
                         type="submit" 
                         class="w-full flex justify-center items-center py-3 px-4 rounded-lg text-sm font-medium text-white btn-cyber focus:outline-none transition-all duration-200 group relative overflow-hidden"
                     >
-                        <span class="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-blue-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-red-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                         <span class="relative flex items-center tracking-wider">
                             <i class="fas fa-fingerprint mr-2 animate-pulse"></i>
                             SECURE LOGIN
@@ -372,10 +372,10 @@
 
                 <div class="flex justify-between items-center pt-2">
                     <div class="flex items-center">
-                        <input type="checkbox" id="remember" name="remember" class="h-4 w-4 rounded bg-gray-700 border-gray-600 text-cyan-600 focus:ring-cyan-500">
+                        <input type="checkbox" id="remember" name="remember" class="h-4 w-4 rounded bg-gray-700 border-gray-600 text-orange-600 focus:ring-orange-500">
                         <label for="remember" class="ml-2 text-xs text-gray-400 hover:text-gray-300 cursor-pointer">Remember this device</label>
                     </div>
-                    <button type="button" onclick="showForgotPassword()" class="text-xs font-medium text-cyan-400 hover:text-cyan-300 transition-colors duration-150">
+                    <button type="button" onclick="showForgotPassword()" class="text-xs font-medium text-orange-400 hover:text-orange-300 transition-colors duration-150">
                         Forgot credentials?
                     </button>
                 </div>
@@ -383,13 +383,13 @@
             
             <div class="mt-8 pt-6 border-t border-gray-700/50">
                 <div class="flex items-start">
-                    <div class="bg-cyan-900/20 p-2 rounded-lg mr-3">
-                        <i class="fas fa-shield-alt text-cyan-500"></i>
+                    <div class="bg-orange-900/20 p-2 rounded-lg mr-3">
+                        <i class="fas fa-shield-alt text-orange-500"></i>
                     </div>
                     <div>
                         <p class="text-xs font-medium text-gray-300 uppercase tracking-wider">Security Notice</p>
                         <p class="text-xs text-gray-400 mt-1">
-                            Always verify the URL matches <span class="font-mono text-cyan-400">https://miner-control.yourdomain.com</span> before entering credentials.
+                            Always verify the URL matches <span class="font-mono text-orange-400">https://miner-control.yourdomain.com</span> before entering credentials.
                         </p>
                         <div class="flex items-center mt-2">
                             <span class="text-xs text-green-400 flex items-center">
@@ -405,10 +405,10 @@
 
     <div id="forgotPasswordModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70 opacity-0 pointer-events-none transition-opacity duration-300 optimized-blur">
         <div class="bg-gray-800 rounded-xl shadow-2xl max-w-md w-full border border-gray-700/50 transform translate-y-4 transition-transform duration-300">
-            <div class="p-6 border-b border-gray-700/50 bg-gradient-to-r from-cyan-900/30 to-blue-900/30">
+            <div class="p-6 border-b border-gray-700/50 bg-gradient-to-r from-orange-900/30 to-red-900/30">
                 <div class="flex items-center justify-between">
                     <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                        <i class="fas fa-key text-cyan-500"></i>
+                        <i class="fas fa-key text-orange-500"></i>
                         CREDENTIAL RECOVERY
                     </h3>
                     <button onclick="closeModal()" class="text-gray-400 hover:text-white transition-colors">
@@ -418,8 +418,8 @@
             </div>
             <div class="p-6">
                 <div class="flex items-start mb-4">
-                    <div class="bg-cyan-900/20 p-2 rounded-lg mr-3">
-                        <i class="fas fa-info-circle text-cyan-500"></i>
+                    <div class="bg-orange-900/20 p-2 rounded-lg mr-3">
+                        <i class="fas fa-info-circle text-orange-500"></i>
                     </div>
                     <div>
                         <p class="text-sm text-gray-300">
@@ -430,11 +430,11 @@
                             <div class="grid grid-cols-2 gap-4 mt-2">
                                 <div>
                                     <p class="text-xs text-gray-400">Email:</p>
-                                    <p class="text-sm font-mono text-cyan-400">security@miner-control.com</p>
+                                    <p class="text-sm font-mono text-orange-400">security@miner-control.com</p>
                                 </div>
                                 <div>
                                     <p class="text-xs text-gray-400">Telegram:</p>
-                                    <p class="text-sm font-mono text-cyan-400">@miner_security_bot</p>
+                                    <p class="text-sm font-mono text-orange-400">@miner_security_bot</p>
                                 </div>
                             </div>
                         </div>
@@ -442,7 +442,7 @@
                 </div>
             </div>
             <div class="p-4 border-t border-gray-700/50 flex justify-end bg-gray-800/50">
-                <button onclick="closeModal()" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 rounded-lg text-white text-sm font-medium transition-colors tracking-wider">
+                <button onclick="closeModal()" class="px-4 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg text-white text-sm font-medium transition-colors tracking-wider">
                     UNDERSTOOD
                 </button>
             </div>
@@ -472,8 +472,8 @@
                 particle.style.animationDelay = `${delay}s`;
                 
                 // Random color variation
-                const hue = 180 + Math.random() * 60; // cyan to blue range
-                particle.style.background = `hsla(${hue}, 90%, 70%, ${Math.random() * 0.5 + 0.3})`;
+                const hue = 25 + Math.random() * 15; // orange to red-orange range
+                particle.style.background = `hsla(${hue}, 90%, 60%, ${Math.random() * 0.5 + 0.3})`;
                 
                 particlesContainer.appendChild(particle);
             }
